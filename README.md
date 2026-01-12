@@ -61,6 +61,12 @@ zcat sh_general_release_dynamic_19.02.2025.fasta.gz \
 ```
 
 ```
-head ./ghost-tree-code-review/sh_general_release_dynamic_19.02.2025_taxonomy.txt
+head ./files/sh_general_release_dynamic_19.02.2025_taxonomy.txt
 ```
-![unite_headers](pics/unite_headers.png)
+
+```
+'Abrothallus_subhalei|MT153946|SH1227328.10FU|refs'	k__Fungi;p__Ascomycota;c__Dothideomycetes;o__Abrothallales;f__Abrothallaceae;g__Abrothallus;s__Abrothallus_subhalei
+'Mucor_inaequisporus|JN206177|SH1227742.10FU|refs'	k__Fungi;p__Mucoromycota;c__Mucoromycetes;o__Mucorales;f__Mucoraceae;g__Mucor;s__Mucor_inaequisporus
+'Candida_vrieseae|KY102517|SH1232203.10FU|refs'	k__Fungi;p__Ascomycota;c__Saccharomycetes;o__Saccharomycetales;f__Saccharomycetales_fam_Incertae_sedis;g__Candida;s__Candida_vrieseae
+'Exophiala_lecanii-corni|AY857528|SH1233462.10FU|refs'	k__Fungi;p__Ascomycota;c__Eurotiomycetes;o__Chaetothyriales;f__Herpotrichiellaceae;g__Exophiala;
+```

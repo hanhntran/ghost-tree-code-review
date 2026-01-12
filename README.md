@@ -63,4 +63,4 @@ zcat sh_general_release_dynamic_19.02.2025.fasta.gz \
 ```
 head ./ghost-tree-code-review/sh_general_release_dynamic_19.02.2025_taxonomy.txt
 ```
-[unite_headers](pics/unite_headers.png)
+![unite_headers](pics/unite_headers.png)

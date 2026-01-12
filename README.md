@@ -47,7 +47,7 @@ gunzip tax_slv_ssu_138.2.txt.gz
 UNITE database (current version 19.02.2025) sh_general_release_dynamic_all_19.02.2025.fasta.gz from
 https://doi.plutof.ut.ee/doi/10.15156/BIO/3301229
 
-### 4. PIPELINE COMMANDS
+### 4. COMMANDS
 1.  Pre-processing UNITE Headers
 - Goal: convert UNITE headers into a tab-separated Accession/Taxonomy map
 - Note: this step handles raw UNITE data.
@@ -69,4 +69,24 @@ head ./files/sh_general_release_dynamic_19.02.2025_taxonomy.txt
 'Mucor_inaequisporus|JN206177|SH1227742.10FU|refs'	k__Fungi;p__Mucoromycota;c__Mucoromycetes;o__Mucorales;f__Mucoraceae;g__Mucor;s__Mucor_inaequisporus
 'Candida_vrieseae|KY102517|SH1232203.10FU|refs'	k__Fungi;p__Ascomycota;c__Saccharomycetes;o__Saccharomycetales;f__Saccharomycetales_fam_Incertae_sedis;g__Candida;s__Candida_vrieseae
 'Exophiala_lecanii-corni|AY857528|SH1233462.10FU|refs'	k__Fungi;p__Ascomycota;c__Eurotiomycetes;o__Chaetothyriales;f__Herpotrichiellaceae;g__Exophiala;
+```
+
+2. Prepare the Backbone Tree (SILVA)
+- Goal: extract fungal sequences from SILVA and filter highly variable positions to create a stable backbone tree
+
+    2a. Extract fungal sequences only
+```
+ghost-tree silva extract-fungi SILVA_132_SSURef_Nr99_tax_silva_full_align_trunc.fasta tax_slv_ssu_132.acc_taxid tax_slv_ssu_132.txt silva_fungi_only.txt
+
+```
+    2b. Filter highly variable positions 
+```
+# Parameters: 
+#   0.9 (Maximum Gap Frequency): Positions with >90% gaps are removed.
+#   0.8 (Maximum Composition Entropy): Highly variable positions removed.
+
+ghost-tree filter-alignment-positions \
+    silva_fungi_only.txt \
+    0.9 0.8 \
+    silva_fungi_only_filtered.txt
 ```

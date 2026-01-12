@@ -15,3 +15,30 @@ conda install conda-forge::python=3.10 conda-forge::matplotlib=3.10.7
 ```
 
 ### 2. INPUT FILES
+A. Backbone Database (Reference)
+- SILVA_132_SSURef_Nr99_tax_silva_full_align_trunc.fasta
+(Source: SILVA database, pre-aligned 18S sequences)
+
+B. Extension Database (UNITE + input ITS data)
+- sh_general_release_dynamic_19.02.2025.fasta
+(Source: UNITE database, raw fasta)
+- ITS2_centroids_97.fasta
+(Source: Our experiment's clustered OTUS)
+
+C. Taxonomy maps
+- constax_taxonomy_qiime2_format.txt
+(Source: Consensus taxonomy output from CONSTAX pipeline. Used in final step
+for better resolution than raw UNITE headers.)
+
+### 3. DOWNLOAD DATABASES
+```
+# Silva database (current version v132)
+wget https://www.arb-silva.de/current-release/Exports/SILVA_138.2_SSURef_NR99_tax_silva_full_align_trunc.fasta.gz
+
+# Silva database taxid file
+wget https://www.arb-silva.de/current-release/Exports/taxonomy/tax_slv_ssu_138.2.acc_taxid.gz
+gunzip tax_slv_ssu_138.2.acc_taxid.gz
+
+wget https://www.arb-silva.de/current-release/Exports/taxonomy/tax_slv_ssu_138.2.txt.gz
+gunzip tax_slv_ssu_138.2.txt.gz
+```

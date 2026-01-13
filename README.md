@@ -98,8 +98,8 @@ ghost-tree filter-alignment-positions \
 3. Group Extensions (OTUs)
 - Goal: cluster ITS sequences based on similarity to map them to the backbone tree.
 ```
-zcat group-extensions sh_general_release_dynamic_19.02.2025.fasta.gz \
-| ghost-tree extensions 0.1 ITS_otu_map_10.txt
+zcat sh_general_release_dynamic_19.02.2025.fasta.gz \
+| ghost-tree extensions group-extensions 0.1 ITS_otu_map_10.txt
 ```
 
 4. Convert CONSTAX taxonomy to ghost-tree format similar to the silva taxonomic map
@@ -114,3 +114,12 @@ python3 scripts/constax_to_ghosttree_format.py $INPUT_FILE $OUTPUT_FILE
 
 5. Scaffold the Hybrid Tree
 - Goal: graft the ITS OTU sequences onto the filtered Silva backbone tree
+
+```
+ghost-tree scaffold hybrid-tree-foundation-alignment \
+    ITS_otu_map_10.txt \
+    constax_taxonomy_ghosttree_format.txt  \
+    ITS2_centroids_97_sorted_cleaned_headers.fasta \
+    silva_fungi_only_138.2_filtered.txt \
+    ghost_tree_10
+```

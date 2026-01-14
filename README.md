@@ -11,7 +11,7 @@ conda activate ghost-tree-test
 
 conda install bioconda::ghost-tree 
 
-conda install conda-forge::python=3.10 conda-forge::matplotlib=3.10.7 bioconda::mafft=7.525
+conda install conda-forge::python=3.10 conda-forge::matplotlib=3.10.7 mafft=7.525
 ```
 
 ### 2. INPUT FILES

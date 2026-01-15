@@ -72,9 +72,7 @@ ghost-tree filter-alignment-positions \
 echo "Done"
 
 echo "Grouping the UNITE database extensions"
-zcat $UNITE_DB \
-| ghost-tree extensions group-extensions 0.1 $ITS_OTU_MAP_10_FILE
-> $UNITE_DB_EXTENSIONS_FILE
+ghost-tree extensions group-extensions $ITS2_FILE 0.1 $ITS_OTU_MAP_10_FILE > $UNITE_DB_EXTENSIONS_FILE
 echo "Done"
 
 echo "Scaffolding the GhostTree"
